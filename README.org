@@ -1,0 +1,11 @@
+#+TITLE: Elixir Etudes
+
+* Purpose
+
+My workings of "Etudes for Elixir".
+
+[[https://github.com/oreillymedia/etudes-for-elixir][Etudes for Elixir]]
+
+
+
+
