@@ -1,25 +1,25 @@
 defmodule Geom do
-  @moduledoc """
-  This is the geometry module required for the Elixir Etudes exercises.
-  """
-  @vsn 0.1
+@moduledoc """
+This module is a geometry module for the Elixir Etudes Exercises.
+"""
+@vsn 0.1
 
-  @doc """
-  returns the area of a rectangle, ellipse or triangle providing the
-  arguments are positive integers
-  """
-  @spec area(atom(), number(), number()) :: number()
+@doc """
+Calculates the area of a rectangle, triangle or ellipse.
+"""
+@spec area(atom(), number(), number()) :: number()
 
-  def area(:rectangle, length, width) when length > 0 and width > 0 do
-    width * length
-  end
+def area :rectangle, width, height do
+  width * height
+end
 
-  def area(:triangle, length, width) when length > 0 and width > 0 do
-    0.5 * width * length
-  end
+def area :triangle, width, height do
+  0.5 * width * height
+end
 
-  def area(:ellipse, length, width) when length > 0 and width > 0 do
-    :math.pi * width * length
-  end
+def area :ellipse, width, height do
+  :math.pi * width * height
+end
+
 end
 
