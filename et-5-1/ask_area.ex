@@ -1,9 +1,13 @@
 defmodule AskArea do
   def area do
     shape = get_shape
-    width = get_width shape
-    height = get_height shape
-    Geom.area {shape, width, height}
+    unless shape == :unknown do
+      width = get_width shape
+      height = get_height shape
+      Geom.area {shape, width, height}
+    else
+      Geom.area {shape, 0, 0}
+    end
   end
 
   defp get_shape do
@@ -48,6 +52,7 @@ defmodule AskArea do
       "R" -> :rectangle
       "T" -> :triangle
       "E" -> :ellipse
+      _ -> :unknown
     end
   end
 end
