@@ -8,13 +8,20 @@ defmodule CoursesTest do
   end
 
   test "adds if a key if not already present" do
+    assert HashDict.equal?(
+      Courses.add(one_elem_hash, "64850,ENGL 032,RF142"),
+                  HashDict.put(one_elem_hash, "RF142", ["ENGL 032"]))
   end
 
   test "appends if key is present" do
+    assert HashDict.equal?(
+      Courses.add(one_elem_hash, "64851,ENGL 032,RF141"),
+                  HashDict.put(HashDict.new, "RF141",
+                    ["ENGL 032", "ENGL 033"]))
   end
 
 
   defp one_elem_hash do
-    dict = HashDict.put HashDict.new, "RF141", "ENGL 033"
+    HashDict.put HashDict.new, "RF141", ["ENGL 033"]
   end
 end
